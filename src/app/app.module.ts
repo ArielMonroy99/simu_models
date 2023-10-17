@@ -8,6 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DpfComponent } from './views/dpf/dpf.component';
 import { DiceComponent } from './views/dice/dice.component';
 import { CoinComponent } from './views/coin/coin.component';
+import { MinimizeFunctionComponent } from './views/minimize-function/minimize-function.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CoinComponent } from './views/coin/coin.component';
     NavbarComponent,
     DpfComponent,
     DiceComponent,
-    CoinComponent
+    CoinComponent,
+    MinimizeFunctionComponent
   ],
   imports: [
     BrowserModule,
