@@ -1,1 +1,17 @@
-<p>dice works!</p>
+<div class="container">
+  <form [formGroup]="diceForm" class="flex flex-col border-r-2 w-full my-5 justify-center align-middle p-10 shadow-md border rounded-md border-gray-500">
+      <label for="sims">Número de simulaciones</label>
+      <input formControlName="simulations" class="number" class="border rounded border-blue-600 focus:border-sky-400 focus:outline-none px-2 py-1" id="sims">
+      <label for="ga">Ganancia del Jugador</label>
+      <input formControlName="gap" class="number" class="border rounded border-blue-600 focus:border-sky-400 focus:outline-none px-2 py-1" id="gap">
+      <label for="cjue">Costo del juego</label>
+      <input formControlName="cjue" class="number" class="border rounded border-blue-600 focus:border-sky-400 focus:outline-none px-2 py-1" id="cjue">
+      <label  for="nl">Cantidad de Juegos</label>
+      <input formControlName="nl" class="number" class="border rounded border-blue-600 focus:border-sky-400 focus:outline-none px-2 py-1" id="nl">
+      <button class="px-2 py-1 my-2 bordered rounded-sm border-blue-400 bg-blue-700 text-white" (click)="calcular()">Calcular</button>
+  </form>
+
+  <section id="res" class="flex flex-col align-middle justify-center items-center border border-black rounded-md shadow-md px-2">
+      <span>k = {{result.toFixed(2)}}</span>
+  </section>
+</div>
