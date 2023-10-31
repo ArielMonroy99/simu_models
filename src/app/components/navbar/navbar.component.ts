@@ -13,14 +13,12 @@ export class NavbarComponent implements OnInit {
   route:string = 'Moneda';
   ngOnInit(): void {
   }
-  routes: IHash = {
-    'Moneda': 'coin',
-    'Dpf': 'dpf',
-    'Minimizar Función': 'minimize',
-  }
   navigate(){
+    this.router.navigate([this.route]).then(() => {
+      this.route = this.router.url.split('/')[1];
+    });
 
-    this.router.navigate([this.routes[this.route]]);
+
   }
 
 }

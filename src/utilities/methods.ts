@@ -83,19 +83,22 @@ export const diceGame = (nmj:number, cj:number, pcj:number, simulations:number) 
       else jgc++;
     }
     let pgjc = (jgc / nmj) * 100;
-    gneta = gneta + cj * jgc;
     results = [...results, { gneta, pgjc, jgc }];
   }
   return results;
 }
 
 export const obtainMeanOfObjects = (numberArray:any[]) => {
-  const propertyNames = numberArray[0].getOwnPropertyNames();
-  const means:any = {};
-  for(let i = 0; i < numberArray.length ; i++){
+
+  const propertyNames = Object.keys(numberArray[0]);
+  let means:any = {...numberArray[0]};
+  for(let i = 1; i < numberArray.length ; i++){
     for(let j = 0; j < propertyNames.length; j++){
       means[propertyNames[j]] += numberArray[i][propertyNames[j]];
     }
+  }
+  for(let j = 0; j < propertyNames.length; j++){
+    means[propertyNames[j]] /= numberArray.length;
   }
   return means;
 }

@@ -2,10 +2,11 @@
   <section class="w-full flex justify-evenly items-stretch">
     <h1 class="text-blue-50 font-bold">Simulación</h1>
     <select (change)="navigate()" [(ngModel)]="route" [value]="route" class="w-64 px-3 bg-blue-500 focus:outline-none border border-gray-50 rounded-md text-white text-sm ">
-      <option selected>Home</option>
-      <option value='Moneda' >Moneda</option>
-      <option value="Dpf" >Dpf</option>
-      <option value="Minimizar Función">Minimizar Función</option>
+      <option  selected>Home</option>
+      <option value="coin" >Moneda</option>
+      <option value="dpf" >Dpf</option>
+      <option value="minimize">Minimizar Función</option>
+      <option value="dice">Dados</option>
     </select>
 
   </section>
