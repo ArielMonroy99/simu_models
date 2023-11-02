@@ -9,6 +9,7 @@ import { DpfComponent } from './views/dpf/dpf.component';
 import { DiceComponent } from './views/dice/dice.component';
 import { CoinComponent } from './views/coin/coin.component';
 import { MinimizeFunctionComponent } from './views/minimize-function/minimize-function.component';
+import { HomeComponent } from './views/home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MinimizeFunctionComponent } from './views/minimize-function/minimize-fu
     DpfComponent,
     DiceComponent,
     CoinComponent,
-    MinimizeFunctionComponent
+    MinimizeFunctionComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { CoinComponent } from './views/coin/coin.component';
 import { DpfComponent } from './views/dpf/dpf.component';
 import { MinimizeFunctionComponent } from './views/minimize-function/minimize-function.component';
 import { DiceComponent } from './views/dice/dice.component';
+import { HomeComponent } from './views/home/home.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,12 @@ const routes: Routes = [
   },
   {
     path: 'dice', component: DiceComponent
+  },
+  {
+    path: 'home', component: HomeComponent
+  },
+  {
+    path: '**', redirectTo: 'home'
   }
 ];
 

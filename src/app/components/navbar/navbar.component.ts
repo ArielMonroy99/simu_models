@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { IHash } from 'src/app/Hash';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +10,7 @@ import { IHash } from 'src/app/Hash';
 export class NavbarComponent implements OnInit {
 
   constructor( private router:Router) { }
-  route:string = 'Moneda';
+  route:string = 'home';
   ngOnInit(): void {
   }
   navigate(){
