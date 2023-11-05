@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { diceGame, obtainMeanOfObjects } from 'src/utilities/methods';
 
 @Component({
@@ -8,6 +8,7 @@ import { diceGame, obtainMeanOfObjects } from 'src/utilities/methods';
   styleUrls: ['./dice.component.css']
 })
 export class DiceComponent implements OnInit {
+  calculated = false;
   diceForm = new FormGroup({
     nmj: new FormControl('', Validators.required),
     pcj: new FormControl('', Validators.required),
@@ -18,12 +19,12 @@ export class DiceComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  results:any[] = [];
-  result:any = {};
-  calcular(){
+  results: any[] = [];
+  result: any = {};
+  calcular() {
     this.results = diceGame(parseInt(this.diceForm.value.nmj!), parseInt(this.diceForm.value.cj!), parseInt(this.diceForm.value.pcj!), parseInt(this.diceForm.value.simulations!));
     this.result = obtainMeanOfObjects(this.results);
-    console.log(this.result);
+    this.calculated = true;
 
   }
 }
