@@ -10,6 +10,10 @@ import { DiceComponent } from './views/dice/dice.component';
 import { CoinComponent } from './views/coin/coin.component';
 import { MinimizeFunctionComponent } from './views/minimize-function/minimize-function.component';
 import { HomeComponent } from './views/home/home.component';
+import { SugarComponent } from './views/sugar/sugar.component';
+import { ArticleComponent } from './views/article/article.component';
+import { EggsComponent } from './views/eggs/eggs.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +23,10 @@ import { HomeComponent } from './views/home/home.component';
     DiceComponent,
     CoinComponent,
     MinimizeFunctionComponent,
-    HomeComponent
+    HomeComponent,
+    SugarComponent,
+    ArticleComponent,
+    EggsComponent
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,15 @@ module.exports = {
     container: {
       center: true,
     },
-    extend: {},
+    extend: {
+      width: {
+        '128': '32rem',
+        '120': '30rem'
+      },
+      height: {
+        '128': '32rem',
+      },
+    },
   },
   plugins: [],
 };
