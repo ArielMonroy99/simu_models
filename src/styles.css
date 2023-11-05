@@ -3,9 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: light dark;
-}
 
 ::-webkit-scrollbar {
   width: 0.5rem;

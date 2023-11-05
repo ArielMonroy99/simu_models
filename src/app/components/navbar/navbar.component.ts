@@ -11,14 +11,11 @@ import { Subscription } from 'rxjs';
 export class NavbarComponent implements OnInit {
   subscriber: Subscription = new Subscription();
   constructor(private router: Router) { }
-  route: string = 'home';
+  route = 'home';
   ngOnInit(): void {
     this.subscriber = this.router.events.pipe().subscribe(() => {
       this.route = this.router.url.split('/')[1];
     });
-  }
-  ngOnDestroy() {
-    this.subscriber?.unsubscribe();
   }
   navigate() {
     this.router.navigate([this.route]).then(() => {

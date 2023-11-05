@@ -8,25 +8,21 @@ import { dpf } from 'src/utilities/methods';
   templateUrl: './dpf.component.html',
   styleUrls: ['./dpf.component.css']
 })
-export class DpfComponent implements OnInit {
+export class DpfComponent {
 
-  constructor() { }
-  result: number = 0;
+  result = 0;
   dpfForm = new FormGroup({
     k: new FormControl(''),
     i: new FormControl(''),
-    simulations: new FormControl(''),
     years: new FormControl('')
   });
 
-  ngOnInit(): void {
-  }
 
   calcular(){
     const values = {... this.dpfForm.value};
-    if(values!== null ){
-      const result = dpf(Number.parseFloat(values.k!), Number.parseFloat(values.i!), Number.parseInt(values.simulations!), Number.parseInt(values.years!));
+    if (values.k && values.i &&values.years) {
+      const result = dpf(Number.parseFloat(values.k), Number.parseFloat(values.i),  Number.parseInt(values.years));
       this.result = result;
-      }
-  }  
+    }  
+  }
 }

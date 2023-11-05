@@ -2,12 +2,11 @@ import { generate } from './generator';
 export const dpf = (
   k: number,
   i: number,
-  simulations: number,
   years: number
 ) => {
   let x = 0;
   while (x < years) {
-    let I = i * k;
+    const I = i * k;
     k = k + I;
     x++;
   }
@@ -21,9 +20,9 @@ export const coinGame = (nl: number, gap: number, cjue: number, simulations: num
     let cd = 0;
     while (cd < nl) {
       cd++;
-      let am1 = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
-      let am2 = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
-      let am3 = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
+      const am1 = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
+      const am2 = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
+      const am3 = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
       if ((am1 > 0.5 && am2 > 0.5 && am3 > 0.5) || (am1 <= 0.5 && am2 <= 0.5 && am3 <= 0.5)) {
         gta += gap - cjue;
       } else {
@@ -51,7 +50,7 @@ export const minimizeFunction = (nmi: number) => {
     seed = Math.round(Math.random() * 8999 + 1000);
     seed = seed % 2 == 0 ? seed + 1 : seed;
     a = Math.round(Math.random() * 20);
-    let randArray = generate(a, 1024, seed, 2);
+    const randArray = generate(a, 1024, seed, 2);
     aux1 = Math.round(randArray[0] * 1000);
     aux2 = Math.round(randArray[1] * 95 + 5);
     if (6 * aux1 + 3 * aux2 >= 200 && 3 * aux1 + 5 * aux2 >= 180) {
@@ -70,7 +69,7 @@ export const diceGame = (nmj: number, cj: number, pcj: number, simulations: numb
     gneta = 0,
     jgc = 0;
   let rd1, rd2, sdado;
-  let results: any = [];
+  let results: unknown[] = [];
   for (let i = 0; i < simulations; i++) {
     (cjue = 0), (gneta = 0), (jgc = 0);
     while (cjue < nmj) {
@@ -82,16 +81,15 @@ export const diceGame = (nmj: number, cj: number, pcj: number, simulations: numb
       if (sdado === 7) gneta -= pcj;
       else jgc++;
     }
-    let pgjc = (jgc / nmj) * 100;
+    const pgjc = (jgc / nmj) * 100;
     results = [...results, { gneta, pgjc, jgc }];
   }
   return results;
 }
 
-
 export const sugarProblem = (simulations: number, nmd: number, cbod: number, creord: number, cuInv: number, cua: number, pvu: number) => {
   console.log(nmd, cbod, creord, cuInv, cua, pvu)
-  let results: any = [];
+  const results: any[] = [];
   for (let i = 0; i < simulations; i++) {
     let ctinv = 0, ib = 0, cd = 0, ctreord = 0, gneta = 0, dins = 0, tent = 0;
     let iazu = cbod, cta = cua * cbod, pazu = 0;
@@ -129,7 +127,7 @@ export const sugarProblem = (simulations: number, nmd: number, cbod: number, cre
       }
 
     }
-    let ct = ctinv + cta + ctreord;
+    const ct = ctinv + cta + ctreord;
     gneta = ib - ct;
     results.push({ gneta, dins, ct });
   }
@@ -139,18 +137,15 @@ export const sugarProblem = (simulations: number, nmd: number, cbod: number, cre
 
 
 export const articleSold = (simulations: number, nmh: number, cfd: number, cua: number, puv: number) => {
-  let results: any = [];
+  const results: any = [];
   for (let i = 0; i < simulations; i++) {
-    let chr = 0, caTotal = 0, cclie = 0, cac = 0, gneta = 0;
+    let chr = 0, caTotal = 0,  cac = 0, gneta = 0;
     while (chr < nmh) {
       chr++;
-      let rlc = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
+      const rlc = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
       let lc = 4 * rlc;
       while (lc > 0) {
-        cclie++;
-        let rcac = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
-        if (rcac <= 0.2) {
-        }
+        const rcac = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
         if (rcac > 0.2 && rcac <= 0.5) {
           cac = 1;
         }
@@ -163,7 +158,6 @@ export const articleSold = (simulations: number, nmh: number, cfd: number, cua: 
         caTotal += cac;
         lc--;
       }
-      cclie = 0;
     }
     gneta = caTotal * (puv - cua) - cfd;
     results.push({ caTotal, gneta });
@@ -172,12 +166,12 @@ export const articleSold = (simulations: number, nmh: number, cfd: number, cua: 
 }
 
 export const eggsProblem = (simulations: number, nmd: number, pvuh: number, pvup: number) => {
-  let results: any = [];
+  const results: any = [];
   for (let i = 0; i < simulations; i++) {
     let cd = 0, nhue = 0, nhuer = 0, npm = 0, npv = 0;
     while (cd < nmd) {
       cd++;
-      let rchueg = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
+      const rchueg = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
       let chueg = 0;
       if (rchueg <= 0.41 && rchueg > 0.14) {
         chueg = 1;
@@ -199,12 +193,12 @@ export const eggsProblem = (simulations: number, nmd: number, pvuh: number, pvup
       }
       while (chueg > 0) {
         chueg--;
-        let refhue = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
+        const refhue = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
         if (refhue <= 0.2) {
           nhuer++;
         }
         if (refhue > 0.2 && refhue <= 0.5) {
-          let rbsp = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
+          const rbsp = generate(Math.round(10 + 89 * Math.random()), 2048, Math.round(1000 + 8999 * Math.random()), 1)[0];
           if (rbsp <= 0.2) {
             npm++;
           }
@@ -217,15 +211,14 @@ export const eggsProblem = (simulations: number, nmd: number, pvuh: number, pvup
         }
       }
     }
-    let gneta = nhue * pvuh + npv * pvup
+    const gneta = nhue * pvuh + npv * pvup
     results.push({ gneta, nhue, npv, npm, nhuer })
   }
   return results;
 }
 export const obtainMeanOfObjects = (numberArray: any[]) => {
-
   const propertyNames = Object.keys(numberArray[0]);
-  let means: any = { ...numberArray[0] };
+  const means: any = { ...numberArray[0] };
   for (let i = 1; i < numberArray.length; i++) {
     for (let j = 0; j < propertyNames.length; j++) {
       means[propertyNames[j]] += numberArray[i][propertyNames[j]];
