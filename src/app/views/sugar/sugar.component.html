@@ -1,5 +1,5 @@
 <div class="container">
-    <form [formGroup]="sugarForm" (submit)="onSubmit()" class="flex flex-col border-r-2 w-128 my-5 justify-center align-middle p-10 shadow-md border rounded-md
+    <form [formGroup]="sugarForm" (submit)="onSubmit()" class="flex flex-col border-r-2  desktop:w-128 laptop:w-128  w-auto my-5 justify-center align-middle p-10 shadow-md border rounded-md
         border-gray-500">
         <label for="sims">Número de simulaciones</label>
         <input formControlName="simulations" type="number"
@@ -32,12 +32,12 @@
         <button class="px-2 py-1 my-2 bordered rounded-sm border-blue-400 bg-blue-700 text-white">Calcular</button>
     </form>
     <section id="res" *ngIf="calculated"
-        class="box-border flex flex-col align-middle items-center border border-black rounded-md shadow-md   w-128 h-128 px-2 overflow-auto">
+        class="box-border flex flex-col align-middle items-center border border-black rounded-md shadow-md   desktop:w-128 laptop:w-128 h-128 px-2 overflow-auto">
         <span class="mt-3">Gneta: {{means.gneta.toFixed(2)}}, Dins {{means.dins.toFixed(2)}}, CT
             {{means.ct.toFixed(2)}}</span>
 
         <div class="flex flex-col items-center ">
-            <table class="table my-3 w-120 ">
+            <table class="table my-3 laptop:w-120 desktop:w-120">
                 <thead class="bg-blue-600  text-white">
                     <th class="py-1 px-4 first:border-l first:rounded-tl-lg border-gray "> Nro </th>
                     <th class="py-1 px-4 first:border-l last:rounded-tr-lg border-gray"> Gneta</th>
