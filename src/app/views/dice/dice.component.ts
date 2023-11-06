@@ -7,7 +7,7 @@ import { diceGame, obtainMeanOfObjects } from 'src/utilities/methods';
   templateUrl: './dice.component.html',
   styleUrls: ['./dice.component.css']
 })
-export class DiceComponent implements OnInit {
+export class DiceComponent{
   calculated = false;
   diceForm = new FormGroup({
     nmj: new FormControl('', Validators.required),
@@ -15,10 +15,7 @@ export class DiceComponent implements OnInit {
     cj: new FormControl('', Validators.required),
     simulations: new FormControl('', Validators.required),
   });
-  constructor() { }
 
-  ngOnInit(): void {
-  }
   results: any[] = [];
   result: any = {};
   calcular() {
